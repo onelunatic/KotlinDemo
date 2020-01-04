@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'calces.screen'
+
+
+//noinspection GroovyMissingReturnStatement
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.compileSdkVersion
+//        vectorDrawables.useSupportLibrary = true // 与 com.android.support:support-vector-drawable 搭配使用,禁掉 Android Studio 自动生成 png 的功能
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+screen {
+    dimens {
+        dimensFileName "dimens"
+        designPx 375
+        smallesWidths 288, 320, 340, 360, 380, 392, 411, 420, 440, 460, 600
+        scale 3            //保留小数位，默认为2
+        scaleMode BigDecimal.ROUND_HALF_UP  //小数保留的方式
+        auto true
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["appcompat_v7"]
+    api rootProject.ext.dependencies["design"]
+}
+
+// deploy
+File deployConfig = rootProject.file('gradle/deploy.properties')
+if (deployConfig.exists()) {
+    apply from: rootProject.file('gradle/deploy.gradle')
+}
