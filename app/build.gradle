@@ -37,4 +37,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation project(":qmui")
+    implementation rootProject.ext.dependencies["retrofit2"]
+    implementation rootProject.ext.dependencies["converter_gson"]
+    implementation rootProject.ext.dependencies["adapter_rxjava2"]
+    implementation rootProject.ext.dependencies["okhttp3"]
 }

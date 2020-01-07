@@ -10,7 +10,6 @@ class MainActivity : BaseActivity() {
 
     override fun init(savedInstanceState: Bundle?) {
         binding.tv.text = getString(R.string.tttt)
-        binding.tvName.text = "name"
     }
 
     override fun initBinding(parent: ViewGroup?) {
