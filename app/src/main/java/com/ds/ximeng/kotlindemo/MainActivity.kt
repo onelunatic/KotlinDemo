@@ -2,6 +2,7 @@ package com.ds.ximeng.kotlindemo
 
 import android.os.Bundle
 import android.view.ViewGroup
+import com.ds.ximeng.kotlindemo.base.net.RetrofitManager
 import com.ds.ximeng.kotlindemo.base.ui.BaseActivity
 
 class MainActivity : BaseActivity() {

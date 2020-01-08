@@ -41,4 +41,6 @@ dependencies {
     implementation rootProject.ext.dependencies["converter_gson"]
     implementation rootProject.ext.dependencies["adapter_rxjava2"]
     implementation rootProject.ext.dependencies["okhttp3"]
+    implementation rootProject.ext.dependencies["logging_interceptor"]
+
 }
