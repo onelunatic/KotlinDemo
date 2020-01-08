@@ -3,7 +3,6 @@ package com.ds.ximeng.kotlindemo.base.net
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
-import java.util.*
 
 class HeaderInterceptor constructor(val heads: Map<String, String>): Interceptor{
 

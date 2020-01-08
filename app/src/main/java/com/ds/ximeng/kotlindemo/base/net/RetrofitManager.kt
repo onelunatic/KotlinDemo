@@ -1,6 +1,5 @@
 package com.ds.ximeng.kotlindemo.base.net
 
-import android.content.Context
 import android.os.Build
 import com.qmuiteam.qmui.BuildConfig
 import okhttp3.OkHttpClient
@@ -39,6 +38,7 @@ object RetrofitManager {
     private fun addHeaders() : Map<String,String>{
         val headers = HashMap<String,String>()
         headers["appType"] = "1"
+        headers["userKey"] = "X20EK6_2e7454d6708527c60ba1a5b11677e87e"
         headers["version"] = BuildConfig.VERSION_NAME
         headers["mobileType"] = if (Build.MODEL.contains(Build.BRAND)) Build.MODEL else Build.BRAND + " " + Build.MODEL
         headers["mac"] = ""

@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
-    <data>
 
-    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            android:layout_marginTop="@dimen/dp_48"
+            android:background="@color/color_f5f5f5"
+            tools:context=".ui.activity.MainActivity">
 
-        <TextView
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello World!"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+        <FrameLayout
+                android:id="@+id/fl_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toTopOf="@+id/community_view2"
                 app:layout_constraintTop_toTopOf="parent"/>
-        <TextView
-                android:id="@+id/tv_name"
-                android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="252dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
 
+        <View
+                android:id="@+id/community_view2"
+                style="@style/common_view_line"
+                app:layout_constraintBottom_toTopOf="@+id/qmui_tab"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.qmuiteam.qmui.widget.QMUITabSegment
+                android:id="@+id/qmui_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_75"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>
