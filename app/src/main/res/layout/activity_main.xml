@@ -6,7 +6,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/dp_48"
             android:background="@color/color_f5f5f5"
             tools:context=".ui.activity.MainActivity">
 

@@ -41,8 +41,6 @@ class MessageFragment : BaseFragment() {
         fun newInstance() =
             MessageFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }

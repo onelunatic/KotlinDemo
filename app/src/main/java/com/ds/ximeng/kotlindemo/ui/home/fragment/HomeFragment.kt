@@ -11,7 +11,7 @@ class HomeFragment : BaseFragment(){
     private lateinit var binding : com.ds.ximeng.kotlindemo.databinding.FragmentHomeBinding
 
     override fun init(savedInstanceState: Bundle?) {
-
+        binding.tvFirst.text = "1111111111111111111"
     }
 
     override fun initBiding(container: ViewGroup?): ViewDataBinding {

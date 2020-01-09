@@ -20,6 +20,14 @@ class MainActivity : BaseActivity() {
         initBottomBar()
     }
 
+    override fun initBinding(parent: ViewGroup?) {
+        binding = bindingLayout(parent)
+    }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
+
     private fun initBottomBar() {
         val homeTab = QMUITabSegment.Tab(resources.getDrawable(R.drawable.ic_launcher_background),
             resources.getDrawable(R.drawable.ic_launcher_background),"",false)
@@ -45,27 +53,19 @@ class MainActivity : BaseActivity() {
             override fun onDoubleTap(index: Int) {}
         })
         binding.qmuiTab.selectTab(0,true,true)
-        changeFragment(0)
-    }
-
-    override fun initBinding(parent: ViewGroup?) {
-        binding = bindingLayout(parent)
-    }
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_main
     }
 
     private fun changeFragment(tabIndex: Int) {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        var fragment = fragmentManager.findFragmentByTag(tabIndex.toString())
-        hideFragment(tabIndex.toString(), transaction)
+        val tag = tabIndex.toString()
+        var fragment = fragmentManager.findFragmentByTag(tag)
+        hideFragment(tag, transaction, fragmentManager.fragments)
         if (fragment != null) {
             transaction.show(fragment)
         } else {
             fragment = fragments[tabIndex]
-            transaction.add(R.id.fl_container, fragment, tabIndex.toString())
+            transaction.add(R.id.fl_container, fragment, tag)
         }
         if (!fragments.contains(fragment)) {
             fragments.add(fragment)
@@ -73,7 +73,7 @@ class MainActivity : BaseActivity() {
         transaction.commitAllowingStateLoss()
     }
 
-    private fun hideFragment(tag: String, transaction: FragmentTransaction) {
+    private fun hideFragment(tag: String, transaction: FragmentTransaction,fragments : List<Fragment>) {
         for (mFragment in fragments) {
             if (tag != mFragment.tag) {
                 transaction.hide(mFragment)
