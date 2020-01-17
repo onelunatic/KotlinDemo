@@ -1,4 +1,4 @@
-package com.ds.ximeng.kotlindemo.ui.home.fragment
+package com.ds.ximeng.kotlindemo.ui.mine.fragment
 
 
 import android.os.Bundle

@@ -6,9 +6,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.ds.ximeng.kotlindemo.R
 import com.ds.ximeng.kotlindemo.base.ui.BaseActivity
+import com.ds.ximeng.kotlindemo.entity.home.HomeBean
 import com.ds.ximeng.kotlindemo.ui.home.fragment.HomeFragment
-import com.ds.ximeng.kotlindemo.ui.home.fragment.MessageFragment
-import com.ds.ximeng.kotlindemo.ui.home.fragment.MineFragment
+import com.ds.ximeng.kotlindemo.ui.message.fragment.MessageFragment
+import com.ds.ximeng.kotlindemo.ui.mine.fragment.MineFragment
 import com.qmuiteam.qmui.widget.QMUITabSegment
 
 class MainActivity : BaseActivity() {
@@ -18,6 +19,8 @@ class MainActivity : BaseActivity() {
 
     override fun init(savedInstanceState: Bundle?) {
         initBottomBar()
+
+
     }
 
     override fun initBinding(parent: ViewGroup?) {

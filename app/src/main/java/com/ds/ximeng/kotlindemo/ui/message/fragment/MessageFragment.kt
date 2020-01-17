@@ -1,9 +1,6 @@
-package com.ds.ximeng.kotlindemo.ui.home.fragment
+package com.ds.ximeng.kotlindemo.ui.message.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 
